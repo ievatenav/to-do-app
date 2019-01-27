@@ -2,10 +2,23 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Lato', sans-serif;
-    background-image: url("bg1.jpg");
-    background-size: cover;
-    background-attachment: fixed;
 }
+
+body:before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background: url("bg1.jpg") no-repeat center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 
 h1 {
     background: rgb(79, 6, 94);
@@ -25,7 +38,7 @@ h1 {
     margin: 100px auto;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     background: #f7f7f7;
-    width: 360px;
+    max-width: 360px;
 }
 
 input {
@@ -81,4 +94,10 @@ span {
 .taskDone {
     text-decoration: line-through;
     color: gray;
+}
+
+@media screen and (max-width: 400px) {
+    #container {
+        margin: 100px 20px;
+    }
 }
